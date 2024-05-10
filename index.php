@@ -91,7 +91,7 @@
                     echo "<td>" . $row["crimeyear"] . "</td>";
                     echo "<td>" . $row["underSection"] . "</td>"; 
                     echo "<td>" . $row["ps"] . "</td>";
-                    echo "<td>" . $row["suretyacceptance"] . "</td>"; 
+                    echo "<td>" . $row["suretyaccepted"] . "</td>"; 
                     echo "<td>" . $row["suretyreturned"] . "</td>"; 
                     echo "<td>" . $row["amount"] . "</td>"; 
                     echo "<td>" . $row["status"] . "</td>";

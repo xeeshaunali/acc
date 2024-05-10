@@ -161,9 +161,9 @@ else
   </div>
   <!-- Surety Returned End -->
     
-  
+  <!-- Case Status Start -->  
   <div class="col-md-3">
-    <label for="status" class="form-label">Case Status</label>
+    <label for="status" class="form-label">Surety Status</label>
     <select id="status" name="status" class="form-select text-center shadow rounded" >      
       <option id="LyingWithRecord" value="LyingWithRecord">Lying with Record</option>
       <option id="DistrictTransffer" value="DistrictTransffer">District Transferred</option>
@@ -173,6 +173,9 @@ else
       <!-- TransferredOutDistrict -->
     </select>
   </div> 
+  <!-- Case Status End -->
+
+
 
   <!-- <div class="col-md-3 text-center">
     <label for="status" class="form-label">ShelfNo</label>
@@ -206,10 +209,13 @@ else
     </select>
   </div>  -->
 
+  <!-- Surety Amount Start -->
   <div class="col-md-3">    
     <label for="inputCity" class="form-label">Amount</label>
-    <input required type="number" class="form-control text-center shadow rounded" name="row" id="row">
+    <input required type="number" class="form-control text-center shadow rounded" name="amount" id="row">
   </div>
+  <!-- Surety Amount End -->
+
 
   <!-- <div class="col-md-3">    
     <label for="inputCity" class="form-label">Bundle No</label>
@@ -221,15 +227,19 @@ else
     <input required type="number" class="form-control text-center shadow rounded" name="file" id="file">
   </div> -->
 
+
+  <!-- Remarks Start -->
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Remarks</label>
     <input type="text" class="form-control text-center shadow rounded" name="remarks" id="remarks">
   </div>
+  <!-- Remarks End -->
   
-  
+
   <div class="col-12 text-center mt-5 mb-1">
     <button type="submit" class="btn btn-success btn-lg w-50 " name="submit">Submit</button>
   </div>
+
   <div class="col-12 text-center mt-5 mb-5">
     <a href="receiptPrint.php" style="text-decoration:none; font-weight:bold; font-size:1rem;" class="btn btn-success shadow round">Print Record Receipt</a>
   </div>
@@ -250,27 +260,26 @@ if(isset($_POST['submit']))
     $casecateg     = trim($_POST['casecateg']);
     $caseno        = trim($_POST['caseno']);
     $year          = trim($_POST['year']);
-    $partyone      = trim($_POST['partyone']);
-    $partytwo      = trim($_POST['partytwo']);
+    $suretyname      = trim($_POST['suretyname']);
+    $accused      = trim($_POST['accused']);
     $crimeno       = trim($_POST['crimeno']);
     $crimeyear     = trim($_POST['crimeyear']);
     $underSection  = trim($_POST['underSection']);
     $ps            = trim($_POST['ps']);
-    $dateInst      = trim($_POST['dateInst']); 
-    $dateDisp      = trim($_POST['dateDisp']); 
-    //$dateSubmission    = trim($_POST['dateSubmission']);
-    // $shelf         = trim($_POST['shelf']);
-    $row         = trim($_POST['row']);
-    // $bundle         = trim($_POST['bundle']);
+    $suretyaccepted      = trim($_POST['suretyaccepted']); 
+    $suretyreturned      = trim($_POST['suretyreturned']);     
+    // $amount         = trim($_POST['amount']);    
     // $file         = trim($_POST['file']);
-    $status        = trim($_POST['status']);    
-    $remarks = trim($_POST['remarks']);
+    // $status        = trim($_POST['status']);    
+    // $remarks = trim($_POST['remarks']);
     
     // $imagename = $_FILES['image']['name'];
     // $temp_name = $_FILES['image']['tmp_name'];
     // move_uploaded_file($temp_name,"../dataimg/$imagename");
 
-    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `caseno`, `year`, `partyone`,`partytwo`,`crimeno`,`crimeyear`,`underSection`, `ps`, `dateInst`, `dateDisp`,  `status`, `remarks`, `row` ) VALUES ('$courtname', '$casecateg', '$caseno', '$year', '$partyone', '$partytwo','$crimeno','$crimeyear', '$underSection', '$ps', '$dateInst', '$dateDisp', '$status', '$remarks', '$row',)";
+    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `suretyname`, `accused`, `caseno`, `year`, `crimeno`, `crimeyear`, `underSection`, `ps`, `suretyaccepted`, `suretyreturned`) VALUES ('$courtname', '$casecateg', '$suretyname', '$accused', '$caseno', '$year', '$crimeno', '$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned')";
+
+    // $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `caseno`, `year`, `suretyname`,`accused`,`crimeno`,`crimeyear`,`underSection`, `ps`, `suretyaccepted`, `suretyreturned`,  `status`, `remarks`, `amount` ) VALUES ('$courtname', '$casecateg', '$caseno', '$year', '$suretyname', '$accused','$crimeno','$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned', '$status', '$remarks', '$amount',)";
     
 
     $run = mysqli_query($con,$qry);
@@ -280,7 +289,7 @@ if(isset($_POST['submit']))
     if($run == false)
     {
         $error = mysqli_error($con);
-        // echo "Error: $error";
+        echo "Error: $error";
         ?>
           <script>
             alert("Fill all fields first");
@@ -314,7 +323,7 @@ if(isset($_POST['submit']))
             
             <?php
             // Perform a SELECT query to fetch the last inserted record based on its ID
-$select_query = "SELECT file FROM acc WHERE id = $last_id";
+$select_query = "SELECT id FROM acc WHERE id = $last_id";
 $result = mysqli_query($con, $select_query);
 
 // Check if the query was successful and if a record was found
@@ -323,7 +332,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     $record = mysqli_fetch_assoc($result);
     
     // Extract the value of the "file" field
-    $file_value = $record['file'];
+    $file_value = $record['id'];
     
     // Display the last inserted ID and the "file" field value
     
