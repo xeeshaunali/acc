@@ -212,7 +212,7 @@ else
   <!-- Surety Amount Start -->
   <div class="col-md-3">    
     <label for="inputCity" class="form-label">Amount</label>
-    <input required type="number" class="form-control text-center shadow rounded" name="amount" id="row">
+    <input required type="number" class="form-control text-center shadow rounded" name="amount" id="amount">
   </div>
   <!-- Surety Amount End -->
 
@@ -268,7 +268,7 @@ if(isset($_POST['submit']))
     $ps            = trim($_POST['ps']);
     $suretyaccepted      = trim($_POST['suretyaccepted']); 
     $suretyreturned      = trim($_POST['suretyreturned']);     
-    // $amount         = trim($_POST['amount']);    
+    $amount         = trim($_POST['amount']);    
     // $file         = trim($_POST['file']);
     // $status        = trim($_POST['status']);    
     // $remarks = trim($_POST['remarks']);
@@ -277,7 +277,7 @@ if(isset($_POST['submit']))
     // $temp_name = $_FILES['image']['tmp_name'];
     // move_uploaded_file($temp_name,"../dataimg/$imagename");
 
-    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `suretyname`, `accused`, `caseno`, `year`, `crimeno`, `crimeyear`, `underSection`, `ps`, `suretyaccepted`, `suretyreturned`) VALUES ('$courtname', '$casecateg', '$suretyname', '$accused', '$caseno', '$year', '$crimeno', '$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned')";
+    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `suretyname`, `accused`, `caseno`, `year`, `crimeno`, `crimeyear`, `underSection`, `ps`, `suretyaccepted`, `suretyreturned`, `amount`) VALUES ('$courtname', '$casecateg', '$suretyname', '$accused', '$caseno', '$year', '$crimeno', '$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned', '$amount')";
 
     // $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `caseno`, `year`, `suretyname`,`accused`,`crimeno`,`crimeyear`,`underSection`, `ps`, `suretyaccepted`, `suretyreturned`,  `status`, `remarks`, `amount` ) VALUES ('$courtname', '$casecateg', '$caseno', '$year', '$suretyname', '$accused','$crimeno','$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned', '$status', '$remarks', '$amount',)";
     
