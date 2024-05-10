@@ -31,7 +31,7 @@ else
       <option selected value="DJ">District & Sessions Court JSO</option>
       <option value="ADJ-I">Additional Court-I, Kotri</option>
       <option value="ADJ-II">Additional Court-II, Kotri</option>
-      <!--<option value="ADJ-S">Additional Court, Sehwan</option>-->
+      <option value="ADJ-S">Additional Court, Sehwan</option>
       <!--<option value="SENIOR-I">Senior / Assistant Sessions Court-I, Kotri</option>-->
       <!--<option value="SENIOR-II">Senior / Assistant Sessions Court-II, Kotri</option>-->
       <!--<option value="SENIOR-S">Senior / Assistant Sessions Court, Sehwan</option>-->
@@ -41,7 +41,7 @@ else
       <!--<option value="CJJM-FAMILY">Family Court JSO</option>-->
       <!--<option value="CJJM-I-S">Civil Court-I, Sehwan</option>-->
       <!--<option value="CJJM-II-S">Civil Court-II, Sehwan</option>-->
-      <option value="CJJM-III-TBK">Civil Court-III, Sehwan @ TBK</option>
+      <!-- <option value="CJJM-III-TBK">Civil Court-III, Sehwan @ TBK</option> -->
       <!--<option value="CJJM-MANJHAND">Civil Court Manjhand</option>-->
       <option value="all">ALL</option>      
     </select>
@@ -52,9 +52,9 @@ else
       
       <option selected id="casecateg" value="criminal">Criminal</option>
       <option value="Bail">Bail</option>
-      <option value="Civil">Civil</option>
+      <!-- <option value="Civil">Civil</option>
       <option value="Family">Family</option>
-      <option value="Misc">MiscAppln</option>
+      <option value="Misc">MiscAppln</option> -->
       <option value="Other">Other</option>
     </select>
   </div>
@@ -67,11 +67,11 @@ else
     <input required type="number" class="form-control text-center shadow rounded" id="inputPassword4" name="year">
   </div>
   <div class="col-md-3">
-    <label for="inputAddress" class="form-label">Party One</label>
+    <label for="inputAddress" class="form-label">Surety Name</label>
     <input required type="text" class="form-control text-center shadow rounded" id="inputAddress" name="partyone">
   </div>
   <div class="col-md-3">
-    <label for="inputAddress2" class="form-label">Party Two</label>
+    <label for="inputAddress2" class="form-label">Accused Name</label>
     <input type="text" class="form-control text-center shadow rounded" id="inputAddress2" name="partytwo">
   </div>
   <div class="col-md-3">
@@ -120,10 +120,11 @@ else
     <input required type="text" class="form-control text-center shadow rounded" id="underSection" name="underSection">
   </div>
   
-  <!-- <div class="col-md-3">
-    <label for="date" class="form-label">DateOfInst</label>
+  <div class="col-md-3">
+    <label for="date" class="form-label">Surety Accepted</label>
     <input type="date" class="form-control text-center shadow rounded" name="dateInst" id="date">
-  </div> -->
+  </div>
+
   <div class="col-md-3">
     <label for="date" class="form-label">DateOfDisp</label>
     <input required type="date" class="form-control text-center shadow rounded" name="dateDisp" id="date">
@@ -140,13 +141,13 @@ else
       <option id="LyingWithRecord" value="LyingWithRecord">Lying with Record</option>
       <option id="DistrictTransffer" value="DistrictTransffer">District Transferred</option>
       <option id="LyingWithClerk" value="LyingWithClerk">Lying with Clerk</option>
-      <option id="LyingWithOneWindow" value="LyingWithOneWindow">Lying with One Window</option>
-      <option id="RemandBack" value="RemandBack">Case Remanded Back</option>
+      <!-- <option id="LyingWithOneWindow" value="LyingWithOneWindow">Lying with One Window</option>
+      <option id="RemandBack" value="RemandBack">Case Remanded Back</option> -->
       <!-- TransferredOutDistrict -->
     </select>
   </div> 
 
-  <div class="col-md-3 text-center">
+  <!-- <div class="col-md-3 text-center">
     <label for="status" class="form-label">ShelfNo</label>
     <select id="shelf" name="shelf" class="form-select text-center shadow rounded" >      
     <option id="A" value="A" class="text-center">A</option>
@@ -174,25 +175,24 @@ else
                 <option id="B" value="W" class="text-center">W</option>
                 <option id="C" value="X" class="text-center">X</option>
                 <option id="A" value="Y" class="text-center">Y</option>
-                <option id="B" value="Z" class="text-center">Z</option>
-      <!-- TransferredOutDistrict -->
+                <option id="B" value="Z" class="text-center">Z</option>    
     </select>
-  </div> 
+  </div>  -->
 
   <div class="col-md-3">    
-    <label for="inputCity" class="form-label">Row NO</label>
+    <label for="inputCity" class="form-label">Amount</label>
     <input required type="number" class="form-control text-center shadow rounded" name="row" id="row">
   </div>
 
-  <div class="col-md-3">    
+  <!-- <div class="col-md-3">    
     <label for="inputCity" class="form-label">Bundle No</label>
     <input required type="number" class="form-control text-center shadow rounded" name="bundle" id="bundle">
-  </div>
+  </div> -->
 
-  <div class="col-md-3">    
+  <!-- <div class="col-md-3">    
     <label for="inputCity" class="form-label">File No</label>
     <input required type="number" class="form-control text-center shadow rounded" name="file" id="file">
-  </div>
+  </div> -->
 
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Remarks</label>
@@ -229,13 +229,13 @@ if(isset($_POST['submit']))
     $crimeyear     = trim($_POST['crimeyear']);
     $underSection  = trim($_POST['underSection']);
     $ps            = trim($_POST['ps']);
-    //$dateInst      = trim($_POST['dateInst']); 
+    $dateInst      = trim($_POST['dateInst']); 
     $dateDisp      = trim($_POST['dateDisp']); 
     //$dateSubmission    = trim($_POST['dateSubmission']);
-    $shelf         = trim($_POST['shelf']);
+    // $shelf         = trim($_POST['shelf']);
     $row         = trim($_POST['row']);
-    $bundle         = trim($_POST['bundle']);
-    $file         = trim($_POST['file']);
+    // $bundle         = trim($_POST['bundle']);
+    // $file         = trim($_POST['file']);
     $status        = trim($_POST['status']);    
     $remarks = trim($_POST['remarks']);
     
@@ -243,7 +243,7 @@ if(isset($_POST['submit']))
     // $temp_name = $_FILES['image']['tmp_name'];
     // move_uploaded_file($temp_name,"../dataimg/$imagename");
 
-    $qry ="INSERT INTO `ctccc`(`courtname`, `casecateg`, `caseno`, `year`, `partyone`,`partytwo`,`crimeno`,`crimeyear`,`underSection`, `ps`, `dateDisp`, `shelf`, `status`, `remarks`, `row`, `bundle`, `file` ) VALUES ('$courtname', '$casecateg', '$caseno', '$year', '$partyone', '$partytwo','$crimeno','$crimeyear', '$underSection', '$ps','$dateDisp', '$shelf', '$status', '$remarks', '$row', '$bundle', '$file' )";
+    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `caseno`, `year`, `partyone`,`partytwo`,`crimeno`,`crimeyear`,`underSection`, `ps`, `dateInst`, `dateDisp`,  `status`, `remarks`, `row` ) VALUES ('$courtname', '$casecateg', '$caseno', '$year', '$partyone', '$partytwo','$crimeno','$crimeyear', '$underSection', '$ps', '$dateInst', '$dateDisp', '$status', '$remarks', '$row',)";
     
 
     $run = mysqli_query($con,$qry);
@@ -278,7 +278,7 @@ if(isset($_POST['submit']))
        
         ?>
             <h1 class="id">
-              <?php echo "Record id is:"."  " . $last_id; ?>
+              <?php echo "Surety id is:"."  " . $last_id; ?>
             </h1>
             
             
@@ -287,7 +287,7 @@ if(isset($_POST['submit']))
             
             <?php
             // Perform a SELECT query to fetch the last inserted record based on its ID
-$select_query = "SELECT file FROM ctccc WHERE id = $last_id";
+$select_query = "SELECT file FROM acc WHERE id = $last_id";
 $result = mysqli_query($con, $select_query);
 
 // Check if the query was successful and if a record was found

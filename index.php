@@ -48,24 +48,24 @@
     <table class="table table-striped table-resposive round shadow" id="dataTable">
         <thead>
             <tr>
-                <th>File No</th>
+                <!-- <th>File No</th> -->
                 <th>ID</th>                
                 <th>Court</th>
                 <th>Case Categ</th>
                 <th>CaseNo</th>
                 <th>CaseYear</th>
-                <th>PartyOne</th>
-                <th>PartyTwo</th>
+                <th>SuretyName</th> <!--PartyOne into Surety Name-->
+                <th>Accused</th> <!--PartyTwo into AccusedName-->
                 <th>CrimeNO</th>
                 <th>CrimeYear</th>
                 <th>UnderSection</th> <!--nameappln changes to UnderSection-->
                 <th>PS</th>
-                <!-- <th>DateOfInst</th>  -->
-                <th>DateOfDisp</th> 
+                <th>DateOfSuretyAccepted</th> 
+                <th>DateOfReturn</th> 
                 <!-- <th>DateOfSubmission</th>  -->
-                <th>Shelf</th>
-                <th>Row</th>
-                <th>Bundle</th>
+                <!-- <th>Shelf</th> -->
+                <th>Amount</th><!--Row into Amount-->
+                <!-- <th>Bundle</th> -->
                 
                 <th>Status</th>
                 <th>Remarks</th>
@@ -83,24 +83,24 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row["file"] . "</td>";
+                    // echo "<td>" . $row["file"] . "</td>";
                     echo "<td>" . $row["id"] . "</td>";                    
                     echo "<td>" . $row["courtname"] . "</td>";
                     echo "<td>" . $row["casecateg"] . "</td>";
                     echo "<td>" . $row["caseno"] . "</td>";
                     echo "<td>" . $row["year"] . "</td>";
-                    echo "<td>" . $row["partyone"] . "</td>";
-                    echo "<td>" . $row["partytwo"] . "</td>";
+                    echo "<td>" . $row["partyone"] . "</td>"; //SuretyName
+                    echo "<td>" . $row["partytwo"] . "</td>"; // Accused Name
                     echo "<td>" . $row["crimeno"] . "</td>";
                     echo "<td>" . $row["crimeyear"] . "</td>";
                     echo "<td>" . $row["underSection"] . "</td>"; //nameappln changed to underSection
                     echo "<td>" . $row["ps"] . "</td>";
-                    //echo "<td>" . $row["dateInst"] . "</td>"; //datedisposal changed to dateInst
-                    echo "<td>" . $row["dateDisp"] . "</td>"; //datedelev changed to dateDisp
+                    echo "<td>" . $row["dateInst"] . "</td>"; //Surety Acceptance
+                    echo "<td>" . $row["dateDisp"] . "</td>"; //Date of Surety Return
                     //echo "<td>" . $row["dateSubmission"] . "</td>"; //datehearing changed to dateSubmission
-                    echo "<td>" . $row["shelf"] . "</td>";
-                    echo "<td>" . $row["row"] . "</td>";
-                    echo "<td>" . $row["bundle"] . "</td>";
+                    // echo "<td>" . $row["shelf"] . "</td>";
+                    echo "<td>" . $row["row"] . "</td>"; // Amount
+                    // echo "<td>" . $row["bundle"] . "</td>";
                     
                     echo "<td>" . $row["status"] . "</td>";
                     echo "<td>" . $row["remarks"] . "</td>";
