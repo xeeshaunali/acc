@@ -154,11 +154,13 @@ else
   <!-- Surety Accepted End -->
 
 
-  <!-- Surety Returned Start -->
-  <div class="col-md-3">
+  <!-- Surety Returned Start DONT NEED HERE -->
+
+  <!-- <div class="col-md-3">
     <label for="date" class="form-label">Surety Returned</label>
     <input required type="date" class="form-control text-center shadow rounded" name="suretyreturned" id="date">
   </div>
+   -->
   <!-- Surety Returned End -->
     
   <!-- Case Status Start -->  
@@ -267,17 +269,17 @@ if(isset($_POST['submit']))
     $underSection  = trim($_POST['underSection']);
     $ps            = trim($_POST['ps']);
     $suretyaccepted      = trim($_POST['suretyaccepted']); 
-    $suretyreturned      = trim($_POST['suretyreturned']);     
+    // $suretyreturned      = trim($_POST['suretyreturned']);     
     $amount         = trim($_POST['amount']);    
     // $file         = trim($_POST['file']);
-    // $status        = trim($_POST['status']);    
-    // $remarks = trim($_POST['remarks']);
+    $status        = trim($_POST['status']);    
+    $remarks = trim($_POST['remarks']);
     
     // $imagename = $_FILES['image']['name'];
     // $temp_name = $_FILES['image']['tmp_name'];
     // move_uploaded_file($temp_name,"../dataimg/$imagename");
 
-    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `suretyname`, `accused`, `caseno`, `year`, `crimeno`, `crimeyear`, `underSection`, `ps`, `suretyaccepted`, `suretyreturned`, `amount`) VALUES ('$courtname', '$casecateg', '$suretyname', '$accused', '$caseno', '$year', '$crimeno', '$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned', '$amount')";
+    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `suretyname`, `accused`, `caseno`, `year`, `crimeno`, `crimeyear`, `underSection`, `ps`, `suretyaccepted`,  `amount`, `status`, `remarks`) VALUES ('$courtname', '$casecateg', '$suretyname', '$accused', '$caseno', '$year', '$crimeno', '$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$amount', '$status', '$remarks')";
 
     // $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `caseno`, `year`, `suretyname`,`accused`,`crimeno`,`crimeyear`,`underSection`, `ps`, `suretyaccepted`, `suretyreturned`,  `status`, `remarks`, `amount` ) VALUES ('$courtname', '$casecateg', '$caseno', '$year', '$suretyname', '$accused','$crimeno','$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned', '$status', '$remarks', '$amount',)";
     
