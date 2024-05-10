@@ -107,7 +107,7 @@ else
   <!-- Crime Year End -->
 
   
-
+  <!-- Police Station Start -->
   <div class="col-md-3">
     <label for="inputSyaye" class="form-label">Police Station</label>
     <select id="ps" class="form-select text-center shadow rounded" name="ps" >      
@@ -137,27 +137,31 @@ else
       <option value="NILL">Nill</option>
     </select>
   </div>
+  <!-- Police Station End -->
 
+  <!-- UnderSection Start -->
   <div class="col-md-3" data-aos="fade-down">
     <label for="underSection" class="form-label">UnderSection</label>
     <input required type="text" class="form-control text-center shadow rounded" id="underSection" name="underSection">
   </div>
+  <!-- UnderSection End -->
   
+  <!-- Surety Accepted Start -->
   <div class="col-md-3">
     <label for="date" class="form-label">Surety Accepted</label>
-    <input type="date" class="form-control text-center shadow rounded" name="dateInst" id="date">
+    <input type="date" class="form-control text-center shadow rounded" name="suretyaccepted" id="date">
   </div>
+  <!-- Surety Accepted End -->
 
+
+  <!-- Surety Returned Start -->
   <div class="col-md-3">
-    <label for="date" class="form-label">DateOfDisp</label>
-    <input required type="date" class="form-control text-center shadow rounded" name="dateDisp" id="date">
+    <label for="date" class="form-label">Surety Returned</label>
+    <input required type="date" class="form-control text-center shadow rounded" name="suretyreturned" id="date">
   </div>
+  <!-- Surety Returned End -->
+    
   
-  <!-- <div class="col-md-3">
-    <label for="date" class="form-label">DateOfSubmission</label>
-    <input type="date" class="form-control text-center shadow rounded" name="dateSubmission" id="date">
-  </div> -->
-
   <div class="col-md-3">
     <label for="status" class="form-label">Case Status</label>
     <select id="status" name="status" class="form-select text-center shadow rounded" >      
