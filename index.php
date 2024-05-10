@@ -54,22 +54,18 @@
                 <th>Case Categ</th>
                 <th>CaseNo</th>
                 <th>CaseYear</th>
-                <th>SuretyName</th> <!--PartyOne into Surety Name-->
-                <th>Accused</th> <!--PartyTwo into AccusedName-->
+                <th>SuretyName</th> 
+                <th>Accused</th> 
+                <th>Amount</th>
                 <th>CrimeNO</th>
                 <th>CrimeYear</th>
-                <th>UnderSection</th> <!--nameappln changes to UnderSection-->
+                <th>UnderSection</th> 
                 <th>PS</th>
                 <th>DateOfSuretyAccepted</th> 
-                <th>DateOfReturn</th> 
-                <!-- <th>DateOfSubmission</th>  -->
-                <!-- <th>Shelf</th> -->
-                <th>Amount</th><!--Row into Amount-->
-                <!-- <th>Bundle</th> -->
-                
+                <th>DateOfReturn</th>                 
+                <th>Amount</th>                
                 <th>Status</th>
                 <th>Remarks</th>
-
                 <!-- Add more columns as needed -->
             </tr>
         </thead>
@@ -89,19 +85,15 @@
                     echo "<td>" . $row["casecateg"] . "</td>";
                     echo "<td>" . $row["caseno"] . "</td>";
                     echo "<td>" . $row["year"] . "</td>";
-                    echo "<td>" . $row["partyone"] . "</td>"; //SuretyName
-                    echo "<td>" . $row["partytwo"] . "</td>"; // Accused Name
+                    echo "<td>" . $row["suretyname"] . "</td>"; 
+                    echo "<td>" . $row["accused"] . "</td>"; 
                     echo "<td>" . $row["crimeno"] . "</td>";
                     echo "<td>" . $row["crimeyear"] . "</td>";
-                    echo "<td>" . $row["underSection"] . "</td>"; //nameappln changed to underSection
+                    echo "<td>" . $row["underSection"] . "</td>"; 
                     echo "<td>" . $row["ps"] . "</td>";
-                    echo "<td>" . $row["dateInst"] . "</td>"; //Surety Acceptance
-                    echo "<td>" . $row["dateDisp"] . "</td>"; //Date of Surety Return
-                    //echo "<td>" . $row["dateSubmission"] . "</td>"; //datehearing changed to dateSubmission
-                    // echo "<td>" . $row["shelf"] . "</td>";
-                    echo "<td>" . $row["row"] . "</td>"; // Amount
-                    // echo "<td>" . $row["bundle"] . "</td>";
-                    
+                    echo "<td>" . $row["suretyacceptance"] . "</td>"; 
+                    echo "<td>" . $row["suretyreturned"] . "</td>"; 
+                    echo "<td>" . $row["amount"] . "</td>"; 
                     echo "<td>" . $row["status"] . "</td>";
                     echo "<td>" . $row["remarks"] . "</td>";
 

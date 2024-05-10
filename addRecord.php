@@ -24,7 +24,7 @@ else
     <form class="row g-3 mx-auto" action="addRecord.php" method="POST">
   
 
-  <!-- test -->
+  <!-- Court Name Start -->
   <div class="col-md-6" data-aos="fade-down">
     <label for="inputState" class="form-label">Court Name</label>
     <select id="courtname" class="form-select text-center shadow rounded" name="courtname" >      
@@ -46,6 +46,9 @@ else
       <option value="all">ALL</option>      
     </select>
   </div>
+  <!-- Court Name End -->
+
+  <!-- Case Category Start -->
   <div class="col-md-6" data-aos="fade-down">
     <label for="inputState" class="form-label">Case / Appln Category</label>
     <select id="inputState" class="form-select text-center shadow rounded" name="casecateg" >
@@ -58,31 +61,51 @@ else
       <option value="Other">Other</option>
     </select>
   </div>
+  <!-- Case Category Start -->
+
+  <!-- Case Number Start -->
   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Case Number</label>
     <input required type="number" class="form-control text-center shadow rounded" id="inputPassword4" name="caseno">
   </div>
+  <!-- Case Number End -->
+
+  <!-- Case Year Start -->
   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Case Year</label>
     <input required type="number" class="form-control text-center shadow rounded" id="inputPassword4" name="year">
   </div>
+  <!-- Case Year End -->
+
+  <!-- Suerty Name Start -->
   <div class="col-md-3">
     <label for="inputAddress" class="form-label">Surety Name</label>
-    <input required type="text" class="form-control text-center shadow rounded" id="inputAddress" name="partyone">
+    <input required type="text" class="form-control text-center shadow rounded" id="inputAddress" name="suretyname">
   </div>
+  <!-- Suerty Name End -->
+
+
+  <!-- Accused Name Start -->
   <div class="col-md-3">
     <label for="inputAddress2" class="form-label">Accused Name</label>
-    <input type="text" class="form-control text-center shadow rounded" id="inputAddress2" name="partytwo">
+    <input type="text" class="form-control text-center shadow rounded" id="inputAddress2" name="accused">
   </div>
+  <!-- Suerty Name End -->
+
+  <!-- Crime Number Start -->
   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Crime Number</label>
     <input type="number" class="form-control text-center shadow rounded" name="crimeno" id="inputPassword4">
   </div>
+  <!-- Crime Number End -->
 
+  <!-- Crime Year Start -->
   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Crime Year</label>
     <input type="number" class="form-control text-center shadow rounded" name="crimeyear" id="inputPassword4">
   </div>
+  <!-- Crime Year End -->
+
   
 
   <div class="col-md-3">
