@@ -9,6 +9,7 @@ else
     header('location:login.php');
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -236,16 +237,16 @@ $result = $con->query($sql);
                         <th>Court<br>Name</th>
                         <th>Case<br>Categ</th>
                         <th>Case<br>No</th>
-                        <th>Year</th>                        
+                        <th>Year</th>
                         <th>CrimeNo</th>
                         <th>CrimeYear</th>
                         <th>P.S</th>
                         <th>Under Section</th>
                         <th>Surety Accpeted</th>
-                        <th>Surety Returned</th>
-                        <th>amount</th>                        
+                        <th>Amount</th>
                         <th>Status</th>
-                        <th>Remarks</th>
+                        <!-- <th>Remarks</th> -->
+                       
             </tr>
             </thead>
             <tbody>
@@ -260,16 +261,14 @@ $result = $con->query($sql);
                             <td><?php echo $row["courtname"]; ?></td>
                             <td><?php echo $row["casecateg"]; ?></td>
                             <td><?php echo $row["caseno"]; ?></td>
-                            <td><?php echo $row["year"]; ?></td>                            
+                            <td><?php echo $row["year"]; ?></td>
                             <td><?php echo $row["crimeno"]; ?></td>
                             <td><?php echo $row["crimeyear"]; ?></td>
                             <td><?php echo $row["ps"]; ?></td>
                             <td><?php echo $row["underSection"]; ?></td>
-                            <?php echo $row["suretyaccepted"]; ?></td> 
-                            <td><?php echo $row["suretyreturned"]; ?></td>
-                            <td><?php echo $row["amount"]; ?></td>                            
+                            <td><?php echo $row["suretyaccepted"]; ?></td>
+                            <td><?php echo $row["amount"]; ?></td>
                             <td><?php echo $row["status"]; ?></td>
-                            <td><?php echo $row["remarks"]; ?></td>
                 </tr>
                 <?php
             }
