@@ -21,56 +21,37 @@ include "dbconn.php";
 $sql = "SELECT COUNT(*) as count FROM acc";
 
 
-// Your SQL query to get row count  LyingWithRecord
+// Your SQL query to get row count  Accounts
 
-$sqlInRecord = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'LyingWithRecord'";
+$sqlAccounts = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'AtAccountsBr'";
 
-// Your SQL query to get row count LyingWithClerk
+// Your SQL query to get row count I&S BR
 
-$sqlInClerk = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'LyingWithClerk'";
+$sqlIT = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'AtI&SBr'";
 
 
 // Your SQL query to get row count DistrictTransffer
 
-$sqlInDistrictTransffer = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'DistrictTransffer'";
-
-
-// Your SQL query to get row count LyingWithOneWindow
-
-$sqlInLyingWithOneWindow = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'LyingWithOneWindow'";
-
-// Your SQL query to get row count RemandBack
-
-$sqlInRemandBack = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'RemandBack'";
+$sqlReturned = "SELECT COUNT(*) as count FROM acc WHERE `status` = 'Returned'";
 
 
 //All Rows
 $result = $con->query($sql);
 
-//Files In Record
-$resultInRecord = $con->query($sqlInRecord);
+//Files In Accounts
+$resultAccounts = $con->query($sqlAccounts);
 
-//Files With Clerk
-$resultInClerk = $con->query($sqlInClerk);
+//Files With IT
+$resultIT = $con->query($sqlIT);
 
-//Files Transffered to Other District
-$resultInDistrictTransffer = $con->query($sqlInDistrictTransffer);
-
-
-//Files With OneWindow Operation CTC
-$resultInLyingWithOneWindow = $con->query($sqlInLyingWithOneWindow);
-
-//Files With OneWindow Operation CTC
-$resultInRemandBack = $con->query($sqlInRemandBack);
-
+//Files Returned
+$resultReturned = $con->query($sqlReturned);
 
 
 $rowCount = 0; // Row Count
-$rowCountInRecord = 0; // Row Count With Record
-$rowCountInClerk = 0; // Row Count Files With Clerk
-$rowCountInDistrictTransffer = 0; // Row Count File District Transffered
-$rowCountInLyingWithOneWindow = 0; // Row Count Files One Window Operations CTC
-$rowCountInRemandBack = 0; // Row Count Files Cases Remand Back
+$rowCountAccounts = 0; // Row Count With Record
+$rowCountIT = 0; // Row Count Files With Clerk
+$rowCountReturned = 0; // Row Count File District Transffered
 
 
 if ($result->num_rows > 0) {
@@ -79,37 +60,23 @@ if ($result->num_rows > 0) {
     $rowCount = $row['count'];    
 }
 
-if ($resultInRecord->num_rows > 0) {
+if ($resultAccounts->num_rows > 0) {
     // Fetch the result as an associative array
-    $rowInRecord = $resultInRecord->fetch_assoc();   
-    $rowCountInRecord = $rowInRecord['count'];    
+    $rowAccounts = $resultAccounts->fetch_assoc();   
+    $rowCountAccounts = $rowAccounts['count'];    
 }
 
-if ($resultInClerk->num_rows > 0) {
+if ($resultIT->num_rows > 0) {
     // Fetch the result as an associative array
-    $rowInClerk = $resultInClerk->fetch_assoc();   
-    $rowCountInClerk = $rowInClerk['count'];    
-}
-
-
-if ($resultInDistrictTransffer->num_rows > 0) {
-    // Fetch the result as an associative array
-    $rowInDistrictTransffer = $resultInDistrictTransffer->fetch_assoc();   
-    $rowCountInDistrictTransffer = $rowInDistrictTransffer['count'];    
+    $rowIT = $resultIT->fetch_assoc();   
+    $rowCountIT = $rowIT['count'];    
 }
 
 
-if ($resultInLyingWithOneWindow->num_rows > 0) {
+if ($resultReturned->num_rows > 0) {
     // Fetch the result as an associative array
-    $rowInLyingWithOneWindow = $resultInLyingWithOneWindow->fetch_assoc();   
-    $rowCountInLyingWithOneWindow = $rowInLyingWithOneWindow['count'];    
-}
-
-
-if ($resultInRemandBack->num_rows > 0) {
-    // Fetch the result as an associative array
-    $rowInRemandBack = $resultInRemandBack->fetch_assoc();   
-    $rowCountInRemandBack = $rowInRemandBack['count'];    
+    $rowReturned = $resultReturned->fetch_assoc();   
+    $rowCountReturned = $rowReturned['count'];    
 }
 
 // Close the connection
@@ -194,7 +161,7 @@ $con->close();
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary fw-bold text-uppercase mb-1">
-                                                Total Sureties</div>
+                                                Total Sureties IN Record</div>
                                                 <a href="allrecord.php" style="color:green !important; text-decoration:none !important;">
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                     <?php echo $rowCount; ?>
@@ -217,7 +184,7 @@ $con->close();
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success fw-bold text-uppercase mb-1">
                                                 Total Sureties I&S-BR</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInRecord; ?></div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountAccounts; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -237,7 +204,7 @@ $con->close();
                                             <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">Total Sureties Accounts-Br
                                             </div>
 
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInClerk; ?>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountIT; ?>
                                             </div>
 
                                         </div>
@@ -259,7 +226,7 @@ $con->close();
                                             <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">Total Surety Returned
                                             </div>
 
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInDistrictTransffer; ?>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountReturned; ?>
                                             </div>
 
                                         </div>

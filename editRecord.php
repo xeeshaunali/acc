@@ -48,17 +48,15 @@ else
     <div class="col-md-12">
         
       <form action="save.php" method="POST" class="mb-1">
-<div class="row">
+<div class="row mb-4">
 
           <div class="col-md-12"> <input hidden="hidden" type="text" name="id" value="<?php echo $row['id']; ?>"> </div>
           
 <!-- Change Surety Status Start -->
-          <div class="col-md-3">
+          <div class="col-md-6">
           <label for="status" class="form-label fw-bold text-success">Surety File Status</label>
           <select id="status" name="status" class="form-select text-center shadow rounded" >   
-
-            <option id="DistrictTransffer" value="DistrictTransffer" <?php echo ($row['status'] == 'DistrictTransffer') ? 'selected' : ''; ?>>District Transffer</option>
-
+            
             <option id="AtAccountsBr" value="AtAccountsBr" <?php echo ($row['status'] == 'AtAccountsBr') ? 'selected' : ''; ?>>With Accounts Branch</option>
 
             <option id="AtI&SBr" value="AtI&SBr" <?php echo ($row['status'] == 'AtI&SBr') ? 'selected' : ''; ?>>With I & S Branch</option>
@@ -68,31 +66,15 @@ else
           </div> 
 <!-- Change Surety Status End -->
 
-<!-- Court Name Start -->
-          
-          <div class="col-md-3">
-          <label for="courtname" class="form-label fw-bold text-success" >Court Name</label>
-          <select id="courtname" name="courtname" class="form-select text-center shadow rounded" >   
-
-            <option id="DJ" value="DJ" <?php echo ($row['courtname'] == 'DJ') ? 'selected' : ''; ?>>DJ</option>
-
-            <option id="ADJ-I" value="ADJ-I" <?php echo ($row['courtname'] == 'ADJ-I') ? 'selected' : ''; ?>>ADJ-I</option>
-
-            <option id="ADJ-II" value="ADJ-II" <?php echo ($row['courtname'] == 'ADJ-II') ? 'selected' : ''; ?>>ADJ-II</option>
-
-            <option id="ADJ-S" value="ADJ-S" <?php echo ($row['courtname'] == 'ADJ-S') ? 'selected' : ''; ?>>ADJ-S</option>
-            <option id="SENIOR-I" value="SENIOR-I" <?php echo ($row['courtname'] == 'SENIOR-I') ? 'selected' : ''; ?>>Senior-I-Kotri</option>
-          </select>
-          </div>
-<!-- Court Name End -->        
           
           
 <!-- Remarks Start-->
-           <div class="col-md-3">
+           <div class="col-md-6">
               <label for="remarks" class="form-label fw-bold text-success">Remarks</label>
               <input type="text" class="form-control text-center shadow rounded" name="remarks" id="remarks" value="<?php echo $row['remarks']; ?>">
           </div>
 <!-- Remarks End-->   
+
 <!-- Add other fields as needed -->
 
 

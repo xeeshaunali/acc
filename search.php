@@ -126,31 +126,30 @@ else
                 <option selected value="all">All</option>
                     <option value="AtAccountsBr">With Accounts Br</option>
                     <option value="AtI&SBr">With I&S Br</option>
-                    <option value="LyingWithClerk">Lying With Clerk</option>
-                    <option  id="LyingWithOneWindow" value="LyingWithOneWindow">Lying with One Window</option>
-                    <option  id="RemandBack" value="RemandBack">Case Remanded Back</option>
+                    <option value="Returned">Surety Returned</option>
                 </select>
             </div>
         <!-- Surety Status End -->
 
 
-            <!-- <div class="col-md-4">
-                <label for="court_name" class="form-label">Court Name:</label>
-                <input type="text" name="court_name" id="court_name" class="form-control">
-            </div> -->
+           
 
-            <!-- Search Button Start -->
-        
+             
         </div>
+
+        <!-- Search Button Start-->
         <div class="row mb-3 text-center">            
             <div class="col-md-12">
                 <button type="submit" class="btn btn-success btn-lg mt-2">Search</button>
             </div>
         </div>
+        <!-- Search Button Start-->
 
         
     </form>
+    <!-- Form End -->
 </div>
+
 <script>
     // Set the content of the new window
     printWindow.document.body.innerHTML = tableDataString;

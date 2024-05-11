@@ -34,7 +34,7 @@ else
         }
     </style>
     
-    <title>ONE WINDOW || CTC</title>
+    <title>E-Surety || CTC</title>
 </head>
 <body>
 
@@ -49,30 +49,27 @@ $crimeno = isset($_GET['crimeno']) ? $_GET['crimeno'] :'';
 $crimeyear = isset($_GET['crimeyear']) ? $_GET['crimeyear'] :'';
 $ps = isset($_GET['ps']) ? $_GET['ps'] : 'all';
 $caseno = isset($_GET['caseno']) ? $_GET['caseno'] :'';
-$bundle = isset($_GET['bundle']) ? $_GET['bundle'] :'';
 $year = isset($_GET['year']) ? $_GET['year'] :'';
-$partyone = isset($_GET['partyone']) ? $_GET['partyone'] :'';
-$partytwo = isset($_GET['partytwo']) ? $_GET['partytwo'] :'';
+$suretyname = isset($_GET['suretyname']) ? $_GET['suretyname'] :'';
+$accused = isset($_GET['accused']) ? $_GET['accused'] :'';
 $court_name = isset($_GET['courtname']) ? $_GET['courtname'] : 'all';
 $status = isset($_GET['status']) ? $_GET['status'] : 'all';
-$shelf = isset($_GET['shelf']) ? $_GET['shelf'] : 'all';
 $underSection = isset($_GET['underSection']) ? $_GET['underSection'] : '';
 
 
 // Build the SQL query based on the selected filters
-$sql = "SELECT * FROM ctccc WHERE 1";
+$sql = "SELECT * FROM acc WHERE 1";
 
 // Add conditions based on the provided filters
 if (!empty($start_date) && !empty($end_date)) {
-    $sql .= " AND dateSubmission BETWEEN '$start_date' AND '$end_date'";    
+    $sql .= " AND suretyaccepted BETWEEN '$start_date' AND '$end_date'";    
 }
 
 
-// Filter by Police Statation
+// Filter by Police Station
 if ($ps !== 'all') {
     $sql .= " AND ps = '$ps'";
 }
-
 
 // Filter by Crime Number
 if (!empty($crimeno)) {
@@ -95,14 +92,14 @@ if (!empty($year)) {
 }
 
 
-// Filter by Party One
-if (!empty($partyone)) {
-    $sql .= " AND partyone like '%$partyone%'";
+// Filter by Surety Name
+if (!empty($suretyname)) {
+    $sql .= " AND suretyname like '%$suretyname%'";
 }
 
-// Filter by Party Two
-if (!empty($partytwo)) {
-    $sql .= " AND partytwo like '%$partytwo%'";
+// Filter by Accused
+if (!empty($accused)) {
+    $sql .= " AND accused like '%$accused%'";
 }
 
 
@@ -118,16 +115,6 @@ if ($status !== 'all') {
     $sql .= " AND status = '$status'";
 }
 
-// Filter by Shelf
-if ($shelf !== 'all') {
-    $sql .= " AND shelf = '$shelf'";
-}
-
-
-// Filter by bundle Number
-if (!empty($bundle)) {
-    $sql .= " AND bundle = '$bundle'";
-}
 
 // Filter by UnderSection
 if (!empty($underSection)) {
@@ -225,15 +212,15 @@ $result = $con->query($sql);
                 </script>
                 </h1>
                 
-        <div class="col-md-4">
+        <div class="col-md-12">
             <h4 class="">Court Name: <?php echo $court_name;?></h4>
         </div>
-        <div class="col-md-4">
-            <h4 class="">Shelf: <?php echo $shelf;?></h4>
-        </div>
-        <div class="col-md-4">
-            <h4 class="">Bundle No: <?php echo $bundle;?></h4>
-        </div>
+        <!-- <div class="col-md-4">
+            <h4 class="">Shelf: <?php // echo $shelf;?></h4>
+        </div> -->
+        <!-- <div class="col-md-4">
+            <h4 class="">Bundle No: <?php // echo $bundle;?></h4>
+        </div> -->
     </div>
     
     <?php
@@ -242,25 +229,21 @@ $result = $con->query($sql);
         <table class="table table-striped bordered">
             <thead>
             <tr>
-                        <th>File No.</th>
-                        <th>ID</th>                        
+                        
+                        <th>ID</th>
+                        <th>Surety Name</th>
+                        <th>Accused</th>                        
                         <th>Court<br>Name</th>
                         <th>Case<br>Categ</th>
                         <th>Case<br>No</th>
-                        <th>Year</th>
-                        <th>PartyOne</th>
-                        <th>PartyTwo</th>
+                        <th>Year</th>                        
                         <th>CrimeNo</th>
                         <th>CrimeYear</th>
                         <th>P.S</th>
                         <th>Under Section</th>
-                        <!-- <th>Inst</th> -->
-                        <th>Disposal</th>
-                        <!-- <th>Submission In Record</th> -->
-                        <th>Shelf</th>
-                        <th>Row</th>
-                        <th>Bundle</th>
-                        
+                        <th>Surety Accpeted</th>
+                        <th>Surety Returned</th>
+                        <th>amount</th>                        
                         <th>Status</th>
                         <th>Remarks</th>
             </tr>
@@ -270,25 +253,21 @@ $result = $con->query($sql);
             while ($row = $result->fetch_assoc()) {
                 ?>
                 <tr>
-                            <td><?php echo $row["file"]; ?></td>
+                           
                             <td><?php echo $row["id"]; ?></td>
+                            <td><?php echo $row["suretyname"]; ?></td>
+                            <td><?php echo $row["accused"]; ?></td>
                             <td><?php echo $row["courtname"]; ?></td>
                             <td><?php echo $row["casecateg"]; ?></td>
                             <td><?php echo $row["caseno"]; ?></td>
-                            <td><?php echo $row["year"]; ?></td>
-                            <td><?php echo $row["partyone"]; ?></td>
-                            <td><?php echo $row["partytwo"]; ?></td>
+                            <td><?php echo $row["year"]; ?></td>                            
                             <td><?php echo $row["crimeno"]; ?></td>
                             <td><?php echo $row["crimeyear"]; ?></td>
                             <td><?php echo $row["ps"]; ?></td>
                             <td><?php echo $row["underSection"]; ?></td>
-                            <!-- <td><?php //echo $row["dateInst"]; ?></td> -->
-                            <td><?php echo $row["dateDisp"]; ?></td>
-                            <!-- <td><?php //echo $row["dateSubmission"]; ?></td> -->
-                            <td><?php echo $row["shelf"]; ?></td>
-                            <td><?php echo $row["row"]; ?></td>
-                            <td><?php echo $row["bundle"]; ?></td>
-                            
+                            <?php echo $row["suretyaccepted"]; ?></td> 
+                            <td><?php echo $row["suretyreturned"]; ?></td>
+                            <td><?php echo $row["amount"]; ?></td>                            
                             <td><?php echo $row["status"]; ?></td>
                             <td><?php echo $row["remarks"]; ?></td>
                 </tr>
