@@ -154,7 +154,7 @@ else
   <!-- Surety Accepted End -->
 
 
-  <!-- Surety Returned Start DONT NEED HERE -->
+  <!-- Surety Returned Start DO NOT NEED HERE -->
 
   <!-- <div class="col-md-3">
     <label for="date" class="form-label">Surety Returned</label>
@@ -167,11 +167,14 @@ else
   <div class="col-md-3">
     <label for="status" class="form-label">Surety Status</label>
     <select id="status" name="status" class="form-select text-center shadow rounded" >      
-      <option id="LyingWithRecord" value="LyingWithRecord">Lying with Record</option>
-      <option id="DistrictTransffer" value="DistrictTransffer">District Transferred</option>
-      <option id="LyingWithClerk" value="LyingWithClerk">Lying with Clerk</option>
+      <option id="AtAccountsBr" value="AtAccountsBr">With Accounts Branch</option>
+      <option id="AtI&SBr" value="AtI&SBr">With I & S Branch</option>
+      <option id="Returned" value="Returned">Surety Returned</option>
+      
+
       <!-- <option id="LyingWithOneWindow" value="LyingWithOneWindow">Lying with One Window</option>
       <option id="RemandBack" value="RemandBack">Case Remanded Back</option> -->
+      
       <!-- TransferredOutDistrict -->
     </select>
   </div> 

@@ -194,7 +194,7 @@ $con->close();
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary fw-bold text-uppercase mb-1">
-                                                Total Record</div>
+                                                Total Sureties</div>
                                                 <a href="allrecord.php" style="color:green !important; text-decoration:none !important;">
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                     <?php echo $rowCount; ?>
@@ -216,7 +216,7 @@ $con->close();
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success fw-bold text-uppercase mb-1">
-                                                Total Files In Record</div>
+                                                Total Sureties I&S-BR</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInRecord; ?></div>
                                         </div>
                                         <div class="col-auto">
@@ -234,7 +234,7 @@ $con->close();
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
 
-                                            <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">Lying With Clerk
+                                            <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">Total Sureties Accounts-Br
                                             </div>
 
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInClerk; ?>
@@ -256,7 +256,7 @@ $con->close();
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
 
-                                            <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">District Transffered
+                                            <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">Total Surety Returned
                                             </div>
 
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInDistrictTransffer; ?>
@@ -270,61 +270,23 @@ $con->close();
                                 </div>
                             </div>
                         </div>
+                    </div>
+<!-- END ROW -->    
 
-                        <!-- TOTAL CTC PENDING DISPLAY NUMBER CARD -->
-                        <div class="col-xl-6 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-
-                                            <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">Lying With One Window
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInLyingWithOneWindow; ?>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- TOTAL CTC PENDING DISPLAY NUMBER CARD -->
-                        <div class="col-xl-6 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-
-                                            <div class="text-xs font-weight-bold text-danger fw-bold text-uppercase mb-1">Cases Remanded Back
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $rowCountInRemandBack; ?>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-<!-- END ROW -->
-
-    
-</div>
+<!--Start line break -->
 <br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="row mx-auto mt-6">
-                        <!-- footer -->
-                        <div class="col-xl-12 col-md-6 mb-6">
+<!--End line break -->
 
-<?php
-include "footer.php";
-?>
-</div></div>
+<!-- footer Start PHP Include -->
+<div class="row mx-auto mt-6">
+    <div class="col-xl-12 col-md-6 mb-6">
+        <?php
+        include "footer.php";
+        ?>
+    </div>
+</div>
+<!-- footer End PHP Include -->
+
 </body>
 </html>
 

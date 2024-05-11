@@ -8,23 +8,30 @@ else
 {
     header('location:login.php');
 }
-?><?php include 'header.php';?>   
+?>
+<!-- Header Start -->
+<?php include 'header.php';?>   
+<!-- Header End -->
 
 
 <div class="container mt-5">
-    <h2 class="mb-4">Generate Report</h2>
+    <h2 class="mb-4">Generate Surety Report or Search Surety</h2>
     <form action="searchResult.php" method="GET" id="myForm">
         <div class="row mb-3">
 
-
-        <div class="col-md-3">
+<!-- Case Number Start -->
+  <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Case Number</label>
     <input type="number" class="form-control text-center shadow rounded" id="inputPassword4" name="caseno">
   </div>
+  <!-- Case Number End -->
+
+  <!-- Case Year Start -->
   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Case Year</label>
     <input type="number" class="form-control text-center shadow rounded" id="inputPassword4" name="year">
   </div>
+  <!-- Case Year End -->
 
 
         <div class="col-md-3">

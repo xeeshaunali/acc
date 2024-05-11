@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./css/bootstrap.css">   
     <script src="datatable/jquery-3.7.0.js"></script>
-    <title>E-Surety || Accounts</title>
+    <title>E-Surety || District Court Jamshoro</title>
     <link rel="stylesheet" href="aos.css">
     <script src="aos.js"></script>
 </head>
@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-12 text-center text-primary shadow rounded mt-1">
                 <h1 class="fw-bold text-success" >District & Sessions Court Jamshoro</h1>
-                <h2 class="text-success">E-Surety Accounts || Sessions Courts</h2>               
+                <h2 class="text-success">E-Surety || District  Court Jamshoro</h2>               
             </div>
         </div>
     </div>
