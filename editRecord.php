@@ -73,7 +73,14 @@ else
               <label for="remarks" class="form-label fw-bold text-success">Remarks</label>
               <input type="text" class="form-control text-center shadow rounded" name="remarks" id="remarks" value="<?php echo $row['remarks']; ?>">
           </div>
-<!-- Remarks End-->   
+<!-- Remarks End-->
+
+<!-- Surety Accpted Start-->
+<div class="col-md-6">
+              <label for="remarks" class="form-label fw-bold text-success">Surety Returned</label>
+              <input type="date" class="form-control text-center shadow rounded" name="suretyreturned" id="suretyreturned" value="<?php echo $row['suretyreturned']; ?>">
+          </div>
+<!-- Remarks Accepted End-->   
 
 <!-- Add other fields as needed -->
 

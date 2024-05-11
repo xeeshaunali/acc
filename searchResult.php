@@ -243,9 +243,11 @@ $result = $con->query($sql);
                         <th>P.S</th>
                         <th>Under Section</th>
                         <th>Surety Accpeted</th>
+                        <th>Returned</th>
                         <th>Amount</th>
                         <th>Status</th>
-                        <!-- <th>Remarks</th> -->
+                        <th>Remarks</th>
+                        
                        
             </tr>
             </thead>
@@ -267,8 +269,12 @@ $result = $con->query($sql);
                             <td><?php echo $row["ps"]; ?></td>
                             <td><?php echo $row["underSection"]; ?></td>
                             <td><?php echo $row["suretyaccepted"]; ?></td>
+                            <td><?php echo $row["suretyreturned"]; ?></td>
                             <td><?php echo $row["amount"]; ?></td>
                             <td><?php echo $row["status"]; ?></td>
+                            <td><?php echo $row["remarks"]; ?></td>
+                            
+
                 </tr>
                 <?php
             }

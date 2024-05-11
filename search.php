@@ -19,6 +19,20 @@ else
     <form action="searchResult.php" method="GET" id="myForm">
         <div class="row mb-3">
 
+  <!-- Surety Accepted From Date Start -->
+  <div class="col-md-3">
+    <label for="date" class="form-label">Surety Accepted Start Date</label>
+    <input type="date" class="form-control text-center shadow rounded" name="start_date" id="start_date">
+  </div>
+  <!-- Surety Accepted From Date End -->
+
+  <!-- Surety Accepted End Date Start -->
+  <div class="col-md-3">
+    <label for="date" class="form-label">Surety Accepted End Date</label>
+    <input type="date" class="form-control text-center shadow rounded" name="end_date" id="end_date">
+  </div>
+  <!-- Surety Accepted End Date End -->
+
 <!-- Case Number Start -->
   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Case Number</label>
