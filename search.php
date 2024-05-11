@@ -33,19 +33,22 @@ else
   </div>
   <!-- Case Year End -->
 
-
-        <div class="col-md-3">
+<!-- Crime No Start -->
+   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Crime Number</label>
     <input type="number" class="form-control text-center shadow rounded" name="crimeno" id="inputPassword4">
-     </div>
+   </div>
+<!-- Crime No End -->
 
+<!-- Crime Year Start -->
   <div class="col-md-3">
     <label for="inputPassword4" class="form-label">Crime Year</label>
     <input type="number" class="form-control text-center shadow rounded" name="crimeyear" id="inputPassword4">
   </div>
+  <!-- Crime Year End -->
 
-
-        <div class="col-md-3">
+<!-- Police Station Start -->
+   <div class="col-md-3">
     <label for="inputSyaye" class="form-label">Police Station</label>
     <select id="ps" class="form-select text-center shadow rounded" name="ps" >
     <option selected value="all">ALL</option>      
@@ -75,34 +78,32 @@ else
       <option value="NILL">Nill</option>
     </select>
   </div>
+  <!-- Police Station End -->
 
+  <!-- Surety Name Start -->
   <div class="col-md-3">
-    <label for="inputAddress" class="form-label">Party One</label>
-    <input type="text" class="form-control text-center shadow rounded" id="inputAddress" name="partyone">
+    <label for="inputAddress" class="form-label">Surety Name</label>
+    <input type="text" class="form-control text-center shadow rounded" id="inputAddress" name="suretyname">
   </div>
+  <!-- Surety Name End -->
 
+  <!-- Accused Name Start -->
   <div class="col-md-3">
-    <label for="inputAddress2" class="form-label">Party Two</label>
-    <input type="text" class="form-control text-center shadow rounded" id="inputAddress2" name="partytwo">
+    <label for="inputAddress2" class="form-label">Accused Name</label>
+    <input type="text" class="form-control text-center shadow rounded" id="inputAddress2" name="accused">
   </div>
+  <!-- Accused Name End -->
 
 
-            <!--<div class="col-md-3">-->
-            <!--    <label for="start_date" class="form-label">From Date:</label>-->
-            <!--    <input type="date" name="start_date" id="start_date" class="form-control text-center shadow rounded">-->
-            <!--</div>-->
-            <!--<div class="col-md-3">-->
-            <!--    <label for="end_date" class="form-label">To Date:</label>-->
-            <!--    <input type="date" name="end_date" id="end_date" class="form-control text-center shadow rounded">-->
-            <!--</div>-->
-            <div class="col-md-3">
+        <!-- Court Name Start -->            
+   <div class="col-md-3">
                 <label for="courtname" class="form-label ">Court Name:</label>
                 <select name="courtname" id="courtname" class="form-select text-center shadow rounded">
                 <option selected value="all">ALL</option>
                 <option value="DJ">District & Sessions Court JSO</option>
                 <option value="ADJ-I">Additional Court-I, Kotri</option>
                 <option value="ADJ-II">Additional Court-II, Kotri</option>
-                <!--<option value="ADJ-S">Additional Court, Sehwan</option>-->
+                <option value="ADJ-S">Additional Court, Sehwan</option>
                 <!--<option value="SENIOR-I">Senior / Assistant Sessions Court-I, Kotri</option>-->
                 <!--<option value="SENIOR-II">Senior / Assistant Sessions Court-II, Kotri</option>-->
                 <!--<option value="SENIOR-S">Senior / Assistant Sessions Court, Sehwan</option>-->
@@ -112,66 +113,33 @@ else
                 <!--<option value="CJJM-FAMILY">Family Court JSO</option>-->
                 <!--<option value="CJJM-I-S">Civil Court-I, Sehwan</option>-->
                 <!--<option value="CJJM-II-S">Civil Court-II, Sehwan</option>-->
-                <option value="CJJM-III-TBK">Civil Court-III, Sehwan @ TBK</option>
+                <!-- <option value="CJJM-III-TBK">Civil Court-III, Sehwan @ TBK</option> -->
                 <!--<option value="CJJM-MANJHAND">Civil Court Manjhand</option>                 -->
                 </select>
-            </div>
+   </div>
+    <!-- Court Name End -->
+
+    <!-- Surety Status Start -->
             <div class="col-md-4">
                 <label for="status" class="form-label">Status:</label>
                 <select name="status" id="status" class="form-select text-center shadow rounded">
                 <option selected value="all">All</option>
-                    <option value="LyingWithRecord">Lying With Record</option>
-                    <option value="DistrictTransffer">District Transffer</option>
+                    <option value="AtAccountsBr">With Accounts Br</option>
+                    <option value="AtI&SBr">With I&S Br</option>
                     <option value="LyingWithClerk">Lying With Clerk</option>
                     <option  id="LyingWithOneWindow" value="LyingWithOneWindow">Lying with One Window</option>
                     <option  id="RemandBack" value="RemandBack">Case Remanded Back</option>
                 </select>
             </div>
+        <!-- Surety Status End -->
+
+
             <!-- <div class="col-md-4">
                 <label for="court_name" class="form-label">Court Name:</label>
                 <input type="text" name="court_name" id="court_name" class="form-control">
             </div> -->
-            <div class="col-md-4 text-center">
-                <label for="status" class="form-label">ShelfNo</label>
-                <select id="shelf" name="shelf" class="form-select text-center shadow rounded" >      
-                <option selected id="all" value="all" class="text-center">All</option>
-                <option id="A" value="A" class="text-center">A</option>
-                <option id="B" value="B" class="text-center">B</option>
-                <option id="C" value="C" class="text-center">C</option>
-                <option id="D" value="D" class="text-center">D</option>
-                <option id="E" value="E" class="text-center">E</option>
-                <option id="F" value="F" class="text-center">F</option>
-                <option id="G" value="G" class="text-center">G</option>
-                <option id="H" value="H" class="text-center">H</option>
-                <option id="I" value="I" class="text-center">I</option>
-                <option id="J" value="J" class="text-center">J</option>
-                <option id="K" value="K" class="text-center">K</option>
-                <option id="L" value="L" class="text-center">L</option>
-                <option id="M" value="M" class="text-center">M</option>
-                <option id="N" value="N" class="text-center">N</option>
-                <option id="O" value="O" class="text-center">O</option>
-                <option id="P" value="P" class="text-center">P</option>
-                <option id="Q" value="Q" class="text-center">Q</option>
-                <option id="R" value="R" class="text-center">R</option>
-                <option id="S" value="S" class="text-center">S</option>
-                <option id="T" value="T" class="text-center">T</option>
-                <option id="U" value="U" class="text-center">U</option>
-                <option id="V" value="V" class="text-center">V</option>
-                <option id="W" value="W" class="text-center">W</option>
-                <option id="X" value="X" class="text-center">X</option>
-                <option id="Y" value="Y" class="text-center">Y</option>
-                <option id="Z" value="Z" class="text-center">Z</option>
-                
-                <!-- TransferredOutDistrict -->
-                </select>
-            </div>
 
-            <div class="col-md-4">
-    <label for="inputPassword4" class="form-label">bundle</label>
-    <input type="number" class="form-control text-center shadow rounded" name="bundle" id="inputPassword4">
-     </div>
-        
-        
+            <!-- Search Button Start -->
         
         </div>
         <div class="row mb-3 text-center">            
