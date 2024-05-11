@@ -92,7 +92,7 @@ $con->close();
                                 <div class="card-body text-center">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <a href="addRecord.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-left" >Add Case Record</a>  
+                                            <a href="addRecord.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-left" >Add Surety Record</a>  
                                             
                                         </div>
                                         <div class="col-auto">
@@ -109,7 +109,7 @@ $con->close();
                                 <div class="card-body text-center">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <a href="editRecord.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-up">Edit Case Record</a>
+                                            <a href="editRecord.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-up">Edit Surety Record</a>
                                             
                                         </div>
                                         <div class="col-auto">
@@ -126,7 +126,7 @@ $con->close();
                                 <div class="card-body text-center">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <a href="search.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-down">Generate Report</a>
+                                            <a href="search.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-down">Generate Surety Report</a>
                                             
                                         </div>
                                         <div class="col-auto">

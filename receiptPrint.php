@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate ID (you may need more thorough validation)
     if (is_numeric($id)) {
         // Prepare and execute the query
-        $stmt = $con->prepare("SELECT * FROM ctccc WHERE id = ?");
+        $stmt = $con->prepare("SELECT * FROM acc WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
 
@@ -45,10 +45,10 @@ $con->close();
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2 class="text-center text-success">Record Receipt</h2>
+      <h2 class="text-center text-success">Surety Receipt</h2>
       <form action="" method="POST">
       <div class="col-md-12 text-center">
-    <label for="inputCity" class="form-label text-dark fw-bold" >Record ID</label>
+    <label for="inputCity" class="form-label text-dark fw-bold" >Receipt ID</label>
     <input type="number" class="form-control text-center shadow rounded" name="id" id="id">
   </div>
   
@@ -69,60 +69,52 @@ if (!empty($data)) {
       <div class="col-md-12">
         <form action="" id="myForm" name="myForm" class="text-center w-100">
       <h1 style="color:green; font-size:2rem; text-align:center;" >DISTRICT & SESSIONS COURT JAMSHORO</h1>
-    <h1 style="color:green; font-size:1rem; text-align:center;" >Record Receipt</h1>
+    <h1 style="color:green; font-size:1rem; text-align:center;" >Surety Receipt</h1>
     
     <table class="table text-center w-100 table-hover center" id="myTable">
   <thead>    
     <tr>
       
       <th scope="col">ID</th>      
+      <th scope="col">Surety Name</th>
+      <th scope="col">Accused</th>
       <th scope="col">Court</th>
-      <th scope="col">Case type</th>
-      <th scope="col">Case No</th>
 
+      <th scope="col">Case Categ</th>
+      <th scope="col">Case No</th>
       <th scope="col">Year</th>
-      <th scope="col">PartyOne</th>
-      <th scope="col">PartyTwo</th>
       <th scope="col">CrimeNo</th>
 
       <th scope="col">CrimeYear</th>
       <th scope="col">UnderSection</th>
       <th scope="col">PS</th>
-      <!-- <th scope="col">DateInst</th> -->
-
-      <th scope="col">DateDisp</th>
-      <!-- <th scope="col">DateSubmission</th> -->
-      <th scope="col">Shelf</th>
-      <th scope="col">Row</th>
-      <th scope="col">Bundle</th>
-      <th scope="col">File</th>
+      <th scope="col">Accepted</th>
+      
+      
+      <th scope="col">Amount</th>
       <th scope="col">Status</th>
       <th scope="col">Remarks</th>
+      
       
     </tr>    
   </thead>
   <tbody>
     <tr>      
       <td><?php echo $data['id']; ?></td>      
+      <td><?php echo $data['suretyname']; ?></td>
+      <td><?php echo $data['accused']; ?></td>
       <td><?php echo $data['courtname']; ?></td>
       <td><?php echo $data['casecateg']; ?></td>
       <td><?php echo $data['caseno']; ?></td>
       <td><?php echo $data['year']; ?></td>
-      <td><?php echo $data['partyone']; ?></td>
-      <td><?php echo $data['partytwo']; ?></td>
       <td><?php echo $data['crimeno']; ?></td>
       <td><?php echo $data['crimeyear']; ?></td>
       <td><?php echo $data['underSection']; ?></td>
       <td><?php echo $data['ps']; ?></td>      
-      <!-- <td><?php //echo $data['dateInst']; ?></td> -->
-      <td><?php echo $data['dateDisp']; ?></td>
-      <!-- <td><?php //echo $data['dateSubmission']; ?></td> -->
-      <td><?php echo $data['shelf']; ?></td>
-      <td><?php echo $data['row']; ?></td>
-      <td><?php echo $data['bundle']; ?></td>
-      <td><?php echo $data['file']; ?></td>
+      <td><?php echo $data['suretyaccepted']; ?></td>      
+      <td><?php echo $data['amount']; ?></td>
       <td><?php echo $data['status']; ?></td>
-      <td><?php echo $data['remarks']; ?></td>
+      <td><?php echo $data['remarks']; ?></td>      
     </tr>    
   </tbody>
 </table>
@@ -178,7 +170,7 @@ if (!empty($data)) {
                                 '<div class="row">' +
                                     '<div class="col-md-12">' +
                                         '<h1 style="color:green; font-size:2rem; text-align:center;">DISTRICT & SESSIONS COURT JAMSHORO</h1>' +
-                                        '<h1 style="color:green; font-size:3rem; text-align:center;">Record Receipt</h1>' +
+                                        '<h1 style="color:green; font-size:3rem; text-align:center;">Surety Receipt</h1>' +
                                     '</div>' +
                                 '</div>' +
                                 '<div class="row">' +
@@ -200,8 +192,8 @@ if (!empty($data)) {
                                 '</div>' +
                                 '<div class="row">' +
                                     '<div class="col-md-12 text-right mt-3">' +
-                                        '<p style="border-top: 1px solid black;"><stron>Kindly print and attach this receipt on case file and Wtite Down Record ID and Record No on file top</strong></p>' +
-                                    '</div>' +
+                                        '<p style="border-top: 1px solid black;"><stron>Computerized receipt need no Signature</strong></p>' +
+                                    '</div>' + 
                                 '</div>' +
                                 '<div class="row">' +
                                     '<div class="col-md-12 text-right mt-3">' +
