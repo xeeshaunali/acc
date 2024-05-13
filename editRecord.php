@@ -9,6 +9,7 @@ else
     header('location:login.php');
 }
 ?>
+
 <?php include 'header.php';?>   
 
 <div class="container-fluid">

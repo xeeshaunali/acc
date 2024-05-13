@@ -143,7 +143,7 @@ $con->close();
                                 <div class="card-body text-center">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <a href="receiptPrint.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-right" >Print Record Receipt</a>  
+                                            <a href="receiptPrint.php" style="text-decoration:none; color:white;font-weight:bold;" class="btn btn-success shadow rounded" data-aos="fade-right" >Print Surety Receipt</a>  
                                             
                                         </div>
                                         <div class="col-auto">
