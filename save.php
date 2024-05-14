@@ -5,16 +5,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $status = $_POST['status'];
     $remarks = $_POST['remarks'];                    
-    $suretyreturned = $_POST['suretyreturned'];
-    
+    $suretyreturned = isset($_POST['suretyreturned']) ? $_POST['suretyreturned'] : NULL;
 
-    $query = "UPDATE acc SET status = '$status', remarks = '$remarks', suretyreturned = '$suretyreturned'  WHERE id = $id";
+    // Prepare the SQL statement
+    $query = "UPDATE acc SET status = '$status', remarks = '$remarks'";
 
-    
+    // Check if suretyreturned is provided
+    if ($suretyreturned !== NULL) {
+        // Check if suretyreturned is a valid date
+        if (strtotime($suretyreturned) !== false) {
+            // If suretyreturned is a valid date, include it in the query
+            $query .= ", suretyreturned = '$suretyreturned'";
+        } else {
+            // If suretyreturned is not a valid date, set it to NULL in the query
+            $query .= ", suretyreturned = NULL";
+        }
+    } else {
+        // If suretyreturned is not provided, set it to NULL in the query
+        $query .= ", suretyreturned = NULL";
+    }
+
+    $query .= " WHERE id = $id";
 
     if ($con->query($query) === TRUE) {
         echo "Record updated successfully";
-        
     } else {
         echo "Error updating record: " . $con->error;
     }

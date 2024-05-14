@@ -235,7 +235,7 @@ else
 
   <!-- Remarks Start -->
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Remarks</label>
+    <label for="inputCity" class="form-label">Remarks / Surety Details</label>
     <input type="text" class="form-control text-center shadow rounded" name="remarks" id="remarks">
   </div>
   <!-- Remarks End -->
