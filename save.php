@@ -10,15 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query = "UPDATE acc SET status = '$status', remarks = '$remarks', suretyreturned = '$suretyreturned'  WHERE id = $id";
 
-    if (empty($suretyreturned)) {
-        $suretyreturned= 'NULL';
-    }
-
-    if (empty($suretyreturned == 'dd---yyyy' )) {
-        $suretyreturned= '';
-    }
-
-
+    
 
     if ($con->query($query) === TRUE) {
         echo "Record updated successfully";
