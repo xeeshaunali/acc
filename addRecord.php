@@ -84,6 +84,20 @@ else
   </div>
   <!-- Suerty Name End -->
 
+  <!-- Suerty CNIC Start -->
+  <div class="col-md-3">
+    <label for="inputAddress" class="form-label">CNIC</label>
+    <input required type="number" class="form-control text-center shadow rounded" id="cnic" name="cnic">
+  </div>
+  <!-- Suerty CNIC End -->
+
+  <!-- Suerty ADDRESS Start -->
+  <div class="col-md-3">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input required type="text" class="form-control text-center shadow rounded" id="address" name="address">
+  </div>
+  <!-- Suerty ADDRESS End -->
+
 
   <!-- Accused Name Start -->
   <div class="col-md-3">
@@ -266,6 +280,8 @@ if(isset($_POST['submit']))
     $caseno        = trim($_POST['caseno']);
     $year          = trim($_POST['year']);
     $suretyname      = trim($_POST['suretyname']);
+    $cnic          = trim($_POST['cnic']);
+    $address       = trim($_POST['address']);
     $accused      = trim($_POST['accused']);
     $crimeno       = trim($_POST['crimeno']);
     $crimeyear     = trim($_POST['crimeyear']);
@@ -282,10 +298,8 @@ if(isset($_POST['submit']))
     // $temp_name = $_FILES['image']['tmp_name'];
     // move_uploaded_file($temp_name,"../dataimg/$imagename");
 
-    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `suretyname`, `accused`, `caseno`, `year`, `crimeno`, `crimeyear`, `underSection`, `ps`, `suretyaccepted`,  `amount`, `status`, `remarks`) VALUES ('$courtname', '$casecateg', '$suretyname', '$accused', '$caseno', '$year', '$crimeno', '$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$amount', '$status', '$remarks')";
-
-    // $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `caseno`, `year`, `suretyname`,`accused`,`crimeno`,`crimeyear`,`underSection`, `ps`, `suretyaccepted`, `suretyreturned`,  `status`, `remarks`, `amount` ) VALUES ('$courtname', '$casecateg', '$caseno', '$year', '$suretyname', '$accused','$crimeno','$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$suretyreturned', '$status', '$remarks', '$amount',)";
-    
+    $qry ="INSERT INTO `acc`(`courtname`, `casecateg`, `suretyname`, `accused`, `caseno`, `year`, `crimeno`, `crimeyear`, `underSection`, `ps`, `suretyaccepted`,  `amount`, `status`, `remarks`, `cnic`, `address`) VALUES ('$courtname', '$casecateg', '$suretyname', '$accused', '$caseno', '$year', '$crimeno', '$crimeyear', '$underSection', '$ps', '$suretyaccepted', '$amount', '$status', '$remarks', '$cnic', '$address')";
+     
 
     $run = mysqli_query($con,$qry);
     

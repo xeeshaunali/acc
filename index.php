@@ -41,11 +41,11 @@
 		</div>	
 
     <div class="row container-fluid" style="margin-top:2rem;margin-right:3rem;margin: left 3rem;">
-        <div class="col-12 ">
+        <div class="col-12">
            <!-- Search input -->
     <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type search query">
     <!-- CHAT GPT -->
-    <table class="table table-striped table-resposive round shadow" id="dataTable">
+    <table class="table table-striped table-resposive round shadow" id="dataTable" style="width:100% !important;">
         <thead>
             <tr>
                 <!-- <th>File No</th> -->

@@ -14,10 +14,21 @@ else
 <!-- Header End -->
 
 
+
+
+
 <div class="container mt-5">
+
     <h2 class="mb-4">Generate Surety Report or Search Surety</h2>
     <form action="searchResult.php" method="GET" id="myForm">
         <div class="row mb-3">
+
+<!--  CNIC Start -->
+<div class="col-md-3">
+    <label for="inputPassword4" class="form-label">CNIC Number</label>
+    <input type="number" class="form-control text-center shadow rounded" id="inputPassword4" name="cnic">
+  </div>
+  <!--  CNIC End -->
 
   <!-- Surety Accepted From Date Start -->
   <div class="col-md-3">
@@ -134,7 +145,7 @@ else
     <!-- Court Name End -->
 
     <!-- Surety Status Start -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="status" class="form-label">Status:</label>
                 <select name="status" id="status" class="form-select text-center shadow rounded">
                 <option selected value="all">All</option>
@@ -154,7 +165,7 @@ else
         <!-- Search Button Start-->
         <div class="row mb-3 text-center">            
             <div class="col-md-12">
-                <button type="submit" class="btn btn-success btn-lg mt-2">Search</button>
+                <button type="submit" class="btn btn-success btn-lg mt-2 mb-5">Search</button>
             </div>
         </div>
         <!-- Search Button Start-->
