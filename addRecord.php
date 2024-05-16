@@ -53,8 +53,8 @@ else
     <label for="inputState" class="form-label">Case / Appln Category</label>
     <select id="inputState" class="form-select text-center shadow rounded" name="casecateg" >
       
-      <option selected id="casecateg" value="criminal">Criminal</option>
-      <option value="Bail">Bail</option>
+      <option id="casecateg" value="criminal">Criminal</option>
+      <option selected value="Bail">Bail</option>
       <!-- <option value="Civil">Civil</option>
       <option value="Family">Family</option>
       <option value="Misc">MiscAppln</option> -->

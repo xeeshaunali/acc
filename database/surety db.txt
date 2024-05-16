@@ -1,0 +1,6 @@
+Surety Database 
+
+server   sdb-67.hosting.stackcp.net
+dbname   surety-35303437cf71
+uname    surety-35303437cf71
+pasword  9sk21brucv
