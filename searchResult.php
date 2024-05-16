@@ -165,7 +165,7 @@ $result = $con->query($sql);
     <?php
      if ($result && $result->num_rows > 0) {
         ?>
-        <table class="table table-striped bordered">
+        <table class="table  bordered">
             <thead>
             <tr>                     
                 <th>ID</th>
@@ -184,7 +184,7 @@ $result = $con->query($sql);
                 <th>Returned</th>
                 <th>Amount</th>
                 <th>Status</th>
-                <th>Remarks</th>                   
+                <th>Details</th>                   
             </tr>
             </thead>
             <tbody>

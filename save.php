@@ -4,11 +4,11 @@ include "dbconn.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $status = $_POST['status'];
-    $remarks = $_POST['remarks'];                    
+    //$remarks = $_POST['remarks'];                    
     $suretyreturned = isset($_POST['suretyreturned']) ? $_POST['suretyreturned'] : NULL;
 
     // Prepare the SQL statement
-    $query = "UPDATE acc SET status = '$status', remarks = '$remarks'";
+    $query = "UPDATE acc SET status = '$status'";
 
     // Check if suretyreturned is provided
     if ($suretyreturned !== NULL) {

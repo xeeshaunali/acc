@@ -154,7 +154,7 @@ else
   <!-- Police Station End -->
 
   <!-- UnderSection Start -->
-  <div class="col-md-3" data-aos="fade-down">
+  <div class="col-md-3">
     <label for="underSection" class="form-label">UnderSection</label>
     <input required type="text" class="form-control text-center shadow rounded" id="underSection" name="underSection">
   </div>

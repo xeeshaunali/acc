@@ -17,9 +17,9 @@ else
     <h2 class="text-center text-success fw-bolder">Edit Surety File Status </h2>
     <!-- Search Edit Form Start -->
     <form action="editRecord.php" method="GET" class="text-center">
-        <label for="search">Search by ID:</label>
-        <input type="number" name="id" id="search" required class="shadow rounded form-select text-center">
-        <button type="submit" class="btn btn-success btn-lg shadow rounded mt-5">Search</button>
+        <label for="search">Search by ID:</label>        
+        <input type="number" name="id" id="search" required class="shadow rounded form-select text-center col-6">        
+        <button type="submit" class="btn btn-success btn-lg w-50 shadow rounded mt-5">Search</button>        
     </form>
     <!-- Search Edit Form End -->
 
@@ -29,6 +29,7 @@ else
 
         include "dbconn.php";
         $id = $_GET['id'];
+        
         
 
         if ($con->connect_error) {
@@ -70,10 +71,10 @@ else
           
           
 <!-- Remarks Start-->
-           <div class="col-md-6">
+           <!-- <div class="col-md-6">
               <label for="remarks" class="form-label fw-bold text-success">Remarks</label>
-              <input type="text" class="form-control text-center shadow rounded" name="remarks" id="remarks" value="<?php echo $row['remarks']; ?>">
-          </div>
+              <input type="text" class="form-control text-center shadow rounded" name="remarks" id="remarks" value="<?php // echo $row['remarks']; ?>">
+          </div> -->
 <!-- Remarks End-->
 
 <!-- Surety Accpted Start-->
